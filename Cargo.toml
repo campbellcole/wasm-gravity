@@ -1,0 +1,13 @@
+[package]
+name = "dual_body"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+speedy2d = { git = "https://github.com/QuantumBadger/Speedy2D.git", branch = "master" }
+log = "0.4"
+wasm-logger = "0.2"
+console_error_panic_hook = "0.1"
+wbg-rand = "0.4"
