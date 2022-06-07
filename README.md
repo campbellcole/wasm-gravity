@@ -6,5 +6,6 @@ cargo install --locked trunk
 rustup override set nightly
 rustup target add wasm32-unknown-unknown
 
-trunk serve --open
+# release performance is necessary
+trunk serve --release --open
 ```

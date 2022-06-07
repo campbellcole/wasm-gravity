@@ -134,7 +134,7 @@ impl Masses {
     pub fn reset(&mut self, dim: UVec2) {
         self.0.clear();
 
-        masses!(300, 0.125, 3, self.0, (dim.x / 2), (dim.y / 2));
+        masses!(1000, 0.125, 3, self.0, (dim.x / 2), (dim.y / 2));
 
         self.start_id_cnt(self.0.len() as u32 + 1);
     }
@@ -213,7 +213,7 @@ impl Masses {
                 let dy = m2.pos.y() - m1.pos.y();
                 let d = f64::sqrt(dx*dx + dy*dy);
 
-                if USE_DISTANCE_CHECK && (d < 0.6 || d > 300.0) {
+                if USE_DISTANCE_CHECK && d < 0.6 {
                     continue;
                 }
 
@@ -299,7 +299,7 @@ impl WindowHandler<UserEvent> for MyHandler
 {
     fn on_start(&mut self, helper: &mut WindowHelper<UserEvent>, info: WindowStartupInfo)
     {
-        helper.set_title("three-body sim");
+        helper.set_title("n-body sim");
 
         self.scale = info.scale_factor() as f32;
         self.dim = *info.viewport_size_pixels();
